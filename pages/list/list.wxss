@@ -1,0 +1,51 @@
+/**index.wxss**/
+.userinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.userinfo-avatar {
+    width: 128 rpx;
+    height: 128 rpx;
+    margin: 20 rpx;
+    border-radius: 50%;
+}
+
+.userinfo-nickname {
+    color: #aaa;
+}
+
+.input {
+    border: 1 rpx solid lightgrey;
+    margin-bottom: 10 rpx;
+}
+
+.input.newTodo {
+    background: rgba(0, 0, 0, 0.003);
+    box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
+}
+
+checkbox-group {
+    margin: 50 rpx 30 rpx;
+}
+
+.todoListTitle {
+    font-size: 60 rpx;
+    margin-bottom: 30 rpx;
+}
+
+.checkbox {
+    text-align: left;
+    line-height: 80 rpx;
+}
+
+.doneCheckBox {
+    color: dimgrey;
+    text-decoration: line-through;
+}
+
+.btn {
+    vertical-align: middle;
+    float: right;
+}
