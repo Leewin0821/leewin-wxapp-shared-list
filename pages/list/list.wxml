@@ -1,34 +1,24 @@
 <view class="container">
 
-  <view class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
-
-  <checkbox-group>
-    <view class="todoListTitle">Todos</view>
-    <view class="input">
-      <input class="newTodo" placeholder="What needs to be done?"
-      placeholder-style="padding:5rpx"
-      bindconfirm="add" 
-      focus/>
+    <view class="userinfo">
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </view>
-    <view class="checkbox" wx:for="{{items}}" wx:key="{{index}}">
-      <view class="{{item.checked === true ? 'doneCheckBox' : ''}}"
-            data-checkedBoxIndex="{{index}}"
-            bindlongtap="bindLongTap">
-        <checkbox bindtap="bindCheck" value="{{item.value}} 
-        data-checkedBoxIndex="{{index}}"
-        checked="{{item.checked}}"/>
-          {{item.name}}
-          <button wx:if="{{item.showBtn}}" class="btn" size="mini" type="warn"
-           data-checkedBoxIndex="{{index}}"
-            bindtap="remove">
-            Remove
-          </button>
-      </view>
-    </view>
-    
-</checkbox-group>
 
+    <view class="mainBody">
+        <view class="todoListTitle">Todos</view>
+        <view class="input">
+            <input class="newTodo" placeholder="What needs to be done?"
+                   placeholder-style="padding:5rpx"
+                   bindconfirm="add"
+                   focus/>
+        </view>
+        <checkbox-group bindchange="checkboxChange">
+            <view class="checkbox {{item.checked === true ? 'doneCheckBox' : ''}}"
+                  wx:for="{{items}}" wx:key="{{index}}">
+                <checkbox checked="{{item.checked}}" value="{{index}}"/>
+                {{item.name}}
+            </view>
+        </checkbox-group>
+    </view>
 </view>
