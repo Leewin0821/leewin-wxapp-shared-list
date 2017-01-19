@@ -9,7 +9,7 @@
         <view class="todoListTitle">Todos</view>
         <view class="input">
             <input class="newTodo" placeholder="What needs to be done?"
-                   placeholder-style="padding:5rpx"
+                   placeholder-class="placeHolder"
                    bindconfirm="add"
                    focus/>
         </view>
